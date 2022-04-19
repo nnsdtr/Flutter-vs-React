@@ -1,1 +1,3 @@
-# brecho-virtual-nao-achei-outro-nome
+# 5o. Semestre
+
+Repositório para divisão de tarefas do grupo
