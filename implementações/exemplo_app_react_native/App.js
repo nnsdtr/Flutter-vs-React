@@ -14,8 +14,9 @@ export default function App() {
   return (
 
     <View style={styles.container}>
-      <Text>
-        Seu Zé  
+
+      <Text style={styles.mainText}>
+        <Text style={styles.titleText}>SEU ZÉ</Text>
         {"\n"}
         <Text>Fazer as compras nunca foi tão fácil</Text>
       </Text>
@@ -39,7 +40,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff1',
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'column',
@@ -62,5 +62,16 @@ const styles = StyleSheet.create({
   splashImage: {
     height: 200,
     width: 200,
-  }
+  },
+
+  mainText: {
+    textAlign: 'center',
+  },
+
+  titleText: {
+    fontSize: 30,
+    fontWeight:'bold',
+    color: 'purple',
+  },
+
 });
