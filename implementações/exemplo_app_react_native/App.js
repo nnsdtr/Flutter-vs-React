@@ -5,7 +5,8 @@ import {
   Text,
   View,
   Button,
-  Alert
+  Alert,
+  Image,
 } from 'react-native';
 import { TouchableOpacity } from 'react-native';
 
@@ -13,17 +14,22 @@ export default function App() {
   return (
 
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>
+        Seu Zé  
+        {"\n"}
+        <Text>Fazer as compras nunca foi tão fácil</Text>
+      </Text>
 
       <StatusBar style="auto" />
 
-      {/* <Image
-        // style={styles.tinyLogo}
+      <Image
+        style={styles.splashImage}
         source={require('./assets/images/splash_2.png')}
-      /> */}
+      />
 
       <TouchableOpacity style={styles.button} onPress={() => { }}>
-        <Text>Continuar</Text>
+        <View ><Text style={styles.textButton}>Continuar</Text></View>
+
       </TouchableOpacity>
     </View>
 
@@ -36,6 +42,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff1',
     alignItems: 'center',
     justifyContent: 'center',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
   },
 
   button: {
@@ -45,5 +53,14 @@ const styles = StyleSheet.create({
     width: '85%',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+
+  textButton: {
+    color: 'white'
+  },
+
+  splashImage: {
+    height: 200,
+    width: 200,
   }
 });
