@@ -1,4 +1,4 @@
-
+import React, { useRef, useState } from 'react';
 import {
     AppRegistry,
     StyleSheet,
@@ -8,31 +8,36 @@ import {
     Alert,
     Image,
 } from 'react-native';
+import TextInput from './TextInput';
+
+//import { InputOutline } from 'react-native-input-outline';
 import { TouchableOpacity } from 'react-native';
 
-
-export default function SplashPage({ navigation }) {
-    const continuar = () => {
-        navigation.navigate('LoginPage');
-    }
-
+export default function App() {
     return (
 
         <View style={styles.container}>
-
+            <StatusBar style="auto" />
             <Text style={styles.mainText}>
-                <Text style={styles.titleText}>SEU ZÉ</Text>
+                {
+                    /* <Text style={styles.titleText}>SEU ZÉ</Text>
+                    {"\n"}
+                    <Text>Fazer as compras nunca foi tão fácil</Text> */
+                }
+                <Text style={styles.titleText}>Bem vindo</Text>
                 {"\n"}
-                <Text>Fazer as compras nunca foi tão fácil</Text>
+                <Text>Preencha os campos para fazer login.</Text>
             </Text>
 
-            <Image
-                style={styles.splashImage}
-                source={require('../assets/images/splash_2.png')}
-            />
+            <TextInput label="Email" />
+            <TextInput label="Senha" />
+            {/* <Image
+        style={styles.splashImage}
+        source={require('./assets/images/splash_2.png')}
+      /> */}
 
             <TouchableOpacity style={styles.button} onPress={() => { }}>
-                <View ><Text style={styles.textButton} onPress={continuar}>Continuar</Text></View>
+                <View ><Text style={styles.textButton}>Continuar</Text></View>
 
             </TouchableOpacity>
         </View>
@@ -44,7 +49,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         flexDirection: 'column',
         justifyContent: 'space-around',
     },
@@ -53,7 +58,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'purple',
         borderRadius: 10,
         height: 60,
-        width: '85%',
+        width: '80%',
         alignItems: 'center',
         justifyContent: 'center',
     },
@@ -74,7 +79,7 @@ const styles = StyleSheet.create({
     titleText: {
         fontSize: 30,
         fontWeight: 'bold',
-        color: 'purple',
+        color: 'black',
     },
 
 });
