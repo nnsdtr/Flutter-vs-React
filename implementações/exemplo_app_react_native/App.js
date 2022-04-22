@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import {
   AppRegistry,
   StyleSheet,
@@ -7,71 +6,30 @@ import {
   Button,
   Alert,
   Image,
+  TouchableOpacity,
 } from 'react-native';
-import { TouchableOpacity } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import 'react-native-gesture-handler';
+import SplashPage from './screens/splash_page';
+import LoginPage from './screens/login_page';
 
-export default function App() {
+function MyStack() {
+
+  const Stack = createStackNavigator();
+
   return (
-
-    <View style={styles.container}>
-
-      <Text style={styles.mainText}>
-        <Text style={styles.titleText}>SEU ZÉ</Text>
-        {"\n"}
-        <Text>Fazer as compras nunca foi tão fácil</Text>
-      </Text>
-
-      <StatusBar style="auto" />
-
-      <Image
-        style={styles.splashImage}
-        source={require('./assets/images/splash_2.png')}
-      />
-
-      <TouchableOpacity style={styles.button} onPress={() => { }}>
-        <View ><Text style={styles.textButton}>Continuar</Text></View>
-
-      </TouchableOpacity>
-    </View>
-
+    <Stack.Navigator>
+      <Stack.Screen options={{headerShown: false}} name="SplashPage" component={SplashPage} />
+      <Stack.Screen name="LoginPage"  component={LoginPage} />
+    </Stack.Navigator>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'column',
-    justifyContent: 'space-around',
-  },
-
-  button: {
-    backgroundColor: 'purple',
-    borderRadius: 10,
-    height: 60,
-    width: '85%',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-
-  textButton: {
-    color: 'white'
-  },
-
-  splashImage: {
-    height: 200,
-    width: 200,
-  },
-
-  mainText: {
-    textAlign: 'center',
-  },
-
-  titleText: {
-    fontSize: 30,
-    fontWeight:'bold',
-    color: 'purple',
-  },
-
-});
+export default function App() {
+  return (
+    <NavigationContainer>
+      <MyStack />
+    </NavigationContainer>
+  );
+}
