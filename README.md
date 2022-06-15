@@ -2,5 +2,5 @@
 ## PUCMinas - Unidade São Gabriel
 ### Programa de Graduação em Sistemas de Informação
 
-Desenvolvimento comparativo de aplicações em **Flutter** e **React Native**
+Comparativo entre aplicações desenvolvidas em **Flutter** e **React Native**
 
